@@ -34,7 +34,7 @@ import { getDateTokenSupplyMap } from "src/views/TreasuryDashboard/components/Gr
 
 /**
  * React Component that displays a line graph comparing the
- * OHM price and liquid backing per backed OHM.
+ * HX price and liquid backing per backed HX.
  */
 export const LiquidBackingPerOhmComparisonGraph = ({ earliestDate, activeToken, subgraphDaysOffset }: GraphProps) => {
   // TODO look at how to combine query documents
@@ -143,7 +143,7 @@ export const LiquidBackingPerOhmComparisonGraph = ({ earliestDate, activeToken, 
       return;
     }
 
-    console.info(`${chartName}: Data loading is done or isActiveTokenOHM has changed. Re-calculating total.`);
+    console.info(`${chartName}: Data loading is done or isActiveTokenHX has changed. Re-calculating total.`);
 
     // Date descending order, so 0 is the latest
     setCurrentBackingHeaderText(
@@ -174,21 +174,21 @@ export const LiquidBackingPerOhmComparisonGraph = ({ earliestDate, activeToken, 
     setDataKeys(tempDataKeys);
 
     const itemNames: string[] = isActiveTokenOHM
-      ? [`OHM Price`, `Liquid Backing per Backed OHM`]
-      : [`gOHM Price`, `Liquid Backing per gOHM`];
+      ? [`HX Price`, `Liquid Backing per Backed HX`]
+      : [`gHX Price`, `Liquid Backing per gHX`];
 
     setCategoriesMap(getCategoriesMap(itemNames, tempDataKeys));
     setBulletpointStylesMap(getBulletpointStylesMap(DEFAULT_BULLETPOINT_COLOURS, tempDataKeys));
     setColorsMap(getDataKeyColorsMap(DEFAULT_COLORS, tempDataKeys));
-    setHeaderText(isActiveTokenOHM ? `OHM Backing` : `gOHM Backing`);
+    setHeaderText(isActiveTokenOHM ? `HX Backing` : `gHX Backing`);
     setTooltipText(
       isActiveTokenOHM
-        ? `This chart compares the price of OHM against its liquid backing per backed OHM. When OHM is above liquid backing, the difference will be highlighted in green. Conversely, when OHM is below liquid backing, the difference will be highlighted in red.
+        ? `This chart compares the price of HX against its liquid backing per backed HX. When HX is above liquid backing, the difference will be highlighted in green. Conversely, when HX is below liquid backing, the difference will be highlighted in red.
         
 The values are determined at the time a snapshot is recorded (every 8 hours). As a result, they will lag the real-time market rates.
 
 As data is sourced from multiple chains that may have different snapshot times, the data shown represents the snapshots for which all data has been recorded. As a result, the data may lag.`
-        : `This chart compares the price of gOHM against its liquid backing per backed gOHM. When gOHM is above liquid backing, the difference will be highlighted in green. Conversely, when gOHM is below liquid backing, the difference will be highlighted in red.
+        : `This chart compares the price of gHX against its liquid backing per backed gHX. When gHX is above liquid backing, the difference will be highlighted in green. Conversely, when gHX is below liquid backing, the difference will be highlighted in red.
 
 The values are determined at the time a snapshot is recorded (every 8 hours). As a result, they will lag the real-time market rates.
 

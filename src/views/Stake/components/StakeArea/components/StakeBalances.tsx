@@ -74,7 +74,7 @@ export const StakeBalances = () => {
         id="user-balance"
         title={`Unstaked Balance`}
         isLoading={!ohmBalance}
-        balance={`${formatBalance(ohmBalance)} OHM`}
+        balance={`${formatBalance(ohmBalance)} HX`}
       />
 
       {crossChainOhmBalances
@@ -83,9 +83,9 @@ export const StakeBalances = () => {
           return (
             <DataRow
               id="user-balance"
-              title={`OHM (${crossChainBalance.networkName})`}
+              title={`HX (${crossChainBalance.networkName})`}
               isLoading={!crossChainBalance.balance}
-              balance={`${formatBalance(crossChainBalance.balance)} OHM`}
+              balance={`${formatBalance(crossChainBalance.balance)} HX`}
             />
           );
         })}
@@ -94,121 +94,121 @@ export const StakeBalances = () => {
         id="user-staked-balance"
         isLoading={!allBalancesLoaded}
         title={`Total Staked Balance`}
-        balance={`${totalStakedBalance} OHM`}
+        balance={`${totalStakedBalance} HX`}
       >
         {sohmBalance?.gt("0") && (
           <DataRow
             indented
-            title={`sOHM`}
+            title={`sHX`}
             id="sohm-balance"
             isLoading={!sohmBalance}
-            balance={`${formatBalance(sohmBalance)} sOHM`}
+            balance={`${formatBalance(sohmBalance)} sHX`}
           />
         )}
 
         <DataRow
           indented
-          title={`gOHM`}
+          title={`gHX`}
           isLoading={!gohmBalances[networks.MAINNET].data}
-          balance={`${formatBalance(gohmBalances[networks.MAINNET].data)} gOHM`}
+          balance={`${formatBalance(gohmBalances[networks.MAINNET].data)} gHX`}
         />
 
         {hasVisibleBalance(gohmBalances[NetworkId.ARBITRUM].data) && (
           <DataRow
             indented
-            title={`gOHM (Arbitrum)`}
+            title={`gHX (Arbitrum)`}
             isLoading={!gohmBalances[NetworkId.ARBITRUM].data}
-            balance={`${formatBalance(gohmBalances[NetworkId.ARBITRUM].data)} gOHM`}
+            balance={`${formatBalance(gohmBalances[NetworkId.ARBITRUM].data)} gHX`}
           />
         )}
 
         {hasVisibleBalance(gohmBalances[NetworkId.AVALANCHE].data) && (
           <DataRow
             indented
-            title={`gOHM (Avalanche)`}
+            title={`gHX (Avalanche)`}
             isLoading={!gohmBalances[NetworkId.AVALANCHE].data}
-            balance={`${formatBalance(gohmBalances[NetworkId.AVALANCHE].data)} gOHM`}
+            balance={`${formatBalance(gohmBalances[NetworkId.AVALANCHE].data)} gHX`}
           />
         )}
 
         {hasVisibleBalance(gohmBalances[NetworkId.POLYGON].data) && (
           <DataRow
             indented
-            title={`gOHM (Polygon)`}
+            title={`gHX (Polygon)`}
             isLoading={!gohmBalances[NetworkId.POLYGON].data}
-            balance={`${formatBalance(gohmBalances[NetworkId.POLYGON].data)} gOHM`}
+            balance={`${formatBalance(gohmBalances[NetworkId.POLYGON].data)} gHX`}
           />
         )}
 
         {hasVisibleBalance(gohmBalances[NetworkId.FANTOM].data) && (
           <DataRow
             indented
-            title={`gOHM (Fantom)`}
+            title={`gHX (Fantom)`}
             isLoading={!gohmBalances[NetworkId.FANTOM].data}
-            balance={`${formatBalance(gohmBalances[NetworkId.FANTOM].data)} gOHM`}
+            balance={`${formatBalance(gohmBalances[NetworkId.FANTOM].data)} gHX`}
           />
         )}
 
         {hasVisibleBalance(gohmBalances[NetworkId.OPTIMISM].data) && (
           <DataRow
             indented
-            title={`gOHM (Optimism)`}
+            title={`gHX (Optimism)`}
             isLoading={!gohmBalances[NetworkId.OPTIMISM].data}
-            balance={`${formatBalance(gohmBalances[NetworkId.OPTIMISM].data)} gOHM`}
+            balance={`${formatBalance(gohmBalances[NetworkId.OPTIMISM].data)} gHX`}
           />
         )}
 
         {hasVisibleBalance(gohmTokemakBalance) && (
           <DataRow
             indented
-            title={`gOHM (Tokemak)`}
+            title={`gHX (Tokemak)`}
             isLoading={!gohmTokemakBalance}
-            balance={`${formatBalance(gohmTokemakBalance)} gOHM`}
+            balance={`${formatBalance(gohmTokemakBalance)} gHX`}
           />
         )}
 
         {hasVisibleBalance(gohmFuseBalance) && (
           <DataRow
             indented
-            title={`gOHM (Fuse)`}
+            title={`gHX (Fuse)`}
             isLoading={!gohmFuseBalance}
-            balance={`${formatBalance(gohmFuseBalance)} gOHM`}
+            balance={`${formatBalance(gohmFuseBalance)} gHX`}
           />
         )}
 
         {hasVisibleBalance(v1sohmBalance) && (
           <DataRow
             indented
-            title={`sOHM (v1)`}
+            title={`sHX (v1)`}
             isLoading={!v1sohmBalance}
-            balance={`${formatBalance(v1sohmBalance)} sOHM`}
+            balance={`${formatBalance(v1sohmBalance)} sHX`}
           />
         )}
 
         {hasVisibleBalance(wsohmBalances[networks.MAINNET].data) && (
           <DataRow
             indented
-            title={`wsOHM`}
+            title={`wsHX`}
             isLoading={!wsohmBalances[networks.MAINNET].data}
-            balance={`${formatBalance(wsohmBalances[networks.MAINNET].data)} wsOHM`}
+            balance={`${formatBalance(wsohmBalances[networks.MAINNET].data)} wsHX`}
           />
         )}
 
         {hasVisibleBalance(wsohmBalances[NetworkId.ARBITRUM].data) && (
           <DataRow
             indented
-            title={`wsOHM (Arbitrum)`}
+            title={`wsHX (Arbitrum)`}
             isLoading={!wsohmBalances[NetworkId.ARBITRUM].data}
-            balance={`${formatBalance(wsohmBalances[NetworkId.ARBITRUM].data)} wsOHM`}
+            balance={`${formatBalance(wsohmBalances[NetworkId.ARBITRUM].data)} wsHX`}
           />
         )}
 
         {hasVisibleBalance(wsohmBalances[NetworkId.AVALANCHE].data) && (
           <DataRow
             indented
-            title={`wsOHM (Avalanche)`}
+            title={`wsHX (Avalanche)`}
             isLoading={!wsohmBalances[NetworkId.AVALANCHE].data}
-            balance={`${formatBalance(wsohmBalances[NetworkId.AVALANCHE].data)} wsOHM`}
+            balance={`${formatBalance(wsohmBalances[NetworkId.AVALANCHE].data)} wsHX`}
           />
         )}
       </DataRow>

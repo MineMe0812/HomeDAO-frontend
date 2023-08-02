@@ -37,7 +37,7 @@ import {
 
 /**
  * React Component that displays a line graph comparing the
- * OHM total, circulating and floating supply.
+ * HX total, circulating and floating supply.
  *
  * @returns
  */
@@ -89,9 +89,9 @@ export const OhmSupplyGraph = ({ earliestDate, onMouseMove, subgraphDaysOffset }
     const tempByDateOhmSupply: OhmSupplyComparison[] = [];
     byDateTokenSupplyMap.forEach((dateSupplyValues, dateString) => {
       /**
-       * Non-Ethereum mainnet chains do not have the OHM index, so they return
-       * TokenSupply results in terms of gOHM. We supply the OHM index from the
-       * protocol metrics query to convert the gOHM values to OHM.
+       * Non-Ethereum mainnet chains do not have the HX index, so they return
+       * TokenSupply results in terms of gHX. We supply the HX index from the
+       * protocol metrics query to convert the gHX values to HX.
        */
       const dayProtocolMetricsResults = byDateProtocolMetricMap.get(dateString);
       if (!dayProtocolMetricsResults || dayProtocolMetricsResults.length == 0) {
@@ -157,13 +157,13 @@ export const OhmSupplyGraph = ({ earliestDate, onMouseMove, subgraphDaysOffset }
   const itemNames: string[] = [
     `External`,
     `Deployed to Lending Markets`,
-    `OHM Bonds (Vesting)`,
+    `HX Bonds (Vesting)`,
     `Protocol-Owned Liquidity`,
     `Boosted Liquidity Vault`,
     `Treasury`,
     `Migration Offset`,
-    `OHM Bonds (Pre-minted)`,
-    `OHM Bonds (User Deposits)`,
+    `HX Bonds (Pre-minted)`,
+    `HX Bonds (User Deposits)`,
     `Total Supply`,
     `Circulating Supply`,
     `Floating Supply`,
@@ -182,13 +182,13 @@ export const OhmSupplyGraph = ({ earliestDate, onMouseMove, subgraphDaysOffset }
       data={byDateOhmSupply}
       dataKeys={dataKeys}
       dataKeyColors={colorsMap}
-      headerText={`OHM Supply`}
+      headerText={`HX Supply`}
       headerSubText={""}
       dataFormat={DataFormat.Number}
       dataKeyBulletpointStyles={bulletpointStylesMap}
       dataKeyLabels={categoriesMap}
       margin={{ left: -5 }}
-      infoTooltipMessage={`This chart visualises the OHM supply over time.`}
+      infoTooltipMessage={`This chart visualises the HX supply over time.`}
       isLoading={byDateOhmSupply.length == 0}
       itemDecimals={0}
       subgraphQueryUrl={queryExplorerUrl}

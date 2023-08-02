@@ -117,11 +117,11 @@ function V1Stake({ setMigrationModalOpen }) {
     // 1st catch if quantity > balance
     let gweiValue = ethers.utils.parseUnits(quantity, "gwei");
     if (action === "stake" && gweiValue.gt(ethers.utils.parseUnits(ohmBalance, "gwei"))) {
-      return toast.error("You cannot stake more than your OHM balance.");
+      return toast.error("You cannot stake more than your HX balance.");
     }
 
     if (action === "unstake" && gweiValue.gt(ethers.utils.parseUnits(sohmBalance, "gwei"))) {
-      return toast.error("You cannot unstake more than your sOHM balance.");
+      return toast.error("You cannot unstake more than your sHX balance.");
     }
 
     await dispatch(
@@ -181,7 +181,7 @@ function V1Stake({ setMigrationModalOpen }) {
                 <div className="wallet-menu" id="wallet-menu">
                   <InPageConnectButton />
                 </div>
-                <Typography variant="h6">Connect your wallet to stake OHM</Typography>
+                <Typography variant="h6">Connect your wallet to stake HX</Typography>
               </div>
             ) : (
               <>
@@ -206,7 +206,7 @@ function V1Stake({ setMigrationModalOpen }) {
                         <>
                           {!oldAssetsDetected
                             ? `All your assets are migrated`
-                            : `You must complete the migration of your assets to stake additional OHM`}
+                            : `You must complete the migration of your assets to stake additional HX`}
                         </>
                       ) : (
                         <br />
@@ -220,9 +220,9 @@ function V1Stake({ setMigrationModalOpen }) {
                         <Box mt={"10px"}>
                           <Typography variant="body1" className="stake-note" color="textSecondary">
                             <>
-                              First time unstaking <b>sOHM</b>?
+                              First time unstaking <b>sHX</b>?
                               <br />
-                              Please approve Olympus Dao to use your <b>sOHM </b>
+                              Please approve Olympus Dao to use your <b>sHX </b>
                               for unstaking.
                             </>
                           </Typography>
@@ -294,7 +294,7 @@ function V1Stake({ setMigrationModalOpen }) {
                             onChangeStake("unstake");
                           }}
                         >
-                          {txnButtonText(pendingTransactions, "unstaking", `Unstake OHM`)}
+                          {txnButtonText(pendingTransactions, "unstaking", `Unstake HX`)}
                         </Button>
                       ) : (
                         <Button
@@ -316,7 +316,7 @@ function V1Stake({ setMigrationModalOpen }) {
                   <DataRow
                     title={`${`Unstaked Balance`} (v1)`}
                     id="user-balance"
-                    balance={`${trim(Number(ohmBalance), 4)} OHM`}
+                    balance={`${trim(Number(ohmBalance), 4)} HX`}
                     isLoading={isAppLoading}
                   />
                   <Accordion className="stake-accordion" square>
@@ -324,34 +324,34 @@ function V1Stake({ setMigrationModalOpen }) {
                       <DataRow
                         title={`Total Staked Balance`}
                         id="user-staked-balance"
-                        balance={`${trimmedBalance} sOHM`}
+                        balance={`${trimmedBalance} sHX`}
                         isLoading={isAppLoading}
                       />
                     </AccordionSummary>
                     <AccordionDetails>
                       <DataRow
-                        title={`${`sOHM Balance`} (v1)`}
-                        balance={`${trim(Number(sohmBalance), 4)} sOHM`}
+                        title={`${`sHX Balance`} (v1)`}
+                        balance={`${trim(Number(sohmBalance), 4)} sHX`}
                         indented
                         isLoading={isAppLoading}
                       />
                       {Number(wsohmBalance) > 0.0 && (
                         <DataRow
-                          title={`${`wsOHM Balance`} (v1)`}
-                          balance={`${trim(Number(wsohmBalance), 4)} wsOHM`}
+                          title={`${`wsHX Balance`} (v1)`}
+                          balance={`${trim(Number(wsohmBalance), 4)} wsHX`}
                           isLoading={isAppLoading}
                           indented
                         />
                       )}
                       <DataRow
-                        title={`${`sOHM Balance`} (v2)`}
-                        balance={`${trim(Number(sohmV2Balance), 4)} sOHM`}
+                        title={`${`sHX Balance`} (v2)`}
+                        balance={`${trim(Number(sohmV2Balance), 4)} sHX`}
                         indented
                         isLoading={isAppLoading}
                       />
                       <DataRow
-                        title={`${`gOHM Balance`} (v2)`}
-                        balance={`${trim(Number(gOhmBalance), 4)} gOHM`}
+                        title={`${`gHX Balance`} (v2)`}
+                        balance={`${trim(Number(gOhmBalance), 4)} gHX`}
                         indented
                         isLoading={isAppLoading}
                       />

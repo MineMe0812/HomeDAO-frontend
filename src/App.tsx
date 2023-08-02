@@ -33,6 +33,7 @@ import { girth as gTheme } from "src/themes/girth.js";
 import { light as lightTheme } from "src/themes/light.js";
 import { BondModalContainer } from "src/views/Bond/components/BondModal/BondModal";
 import { BondModalContainerV3 } from "src/views/Bond/components/BondModal/BondModalContainerV3";
+import { Home } from "src/views/Home";
 import { Lending } from "src/views/Lending";
 import { LendingMarkets } from "src/views/Lending/LendingMarkets";
 import { Liquidity } from "src/views/Liquidity";
@@ -76,7 +77,7 @@ const StyledDiv = styled("div")(({ theme }) => ({
       duration: transitionDuration,
     }),
     marginLeft: drawerWidth,
-    marginTop: "-48.5px",
+    // marginTop: "-48.5px",
   },
 
   [`& .${classes.contentShift}`]: {
@@ -238,6 +239,7 @@ function App() {
                     path="/stake"
                     element={<StakeVersionContainer setMigrationModalOpen={setMigrationModalOpen} />}
                   />
+                  <Route path="/home" element={<Home />} />
                   <Route path="/v1-stake" element={<V1Stake setMigrationModalOpen={setMigrationModalOpen} />} />
                   <Route path="/bonds/v3/:id" element={<BondModalContainerV3 />} />
                   <Route path="/bonds/v3/inverse/:id" element={<BondModalContainerV3 />} />

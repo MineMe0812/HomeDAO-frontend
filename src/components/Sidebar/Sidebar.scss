@@ -74,7 +74,17 @@
 .dapp-menu-links {
   min-height: 35vh;
   align-items: center;
+
+  .button-dapp-menu.active {
+    color: #F8CC82;
+  
+    .link-container {
+      background: transparent !important;
+    }
+  }
 }
+
+
 
 .bond-discounts {
   text-align: left;

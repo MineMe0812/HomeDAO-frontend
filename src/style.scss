@@ -1,7 +1,10 @@
 * {
   outline: none;
-  -ms-overflow-style: none !important; /* IE and Edge */
-  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+  scrollbar-width: none !important;
+
+  /* Firefox */
   &::-webkit-scrollbar {
     display: none !important;
   }
@@ -22,6 +25,11 @@ body,
 body {
   margin: 0;
   box-sizing: border-box;
+  background-image: url('./assets/bg.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+  background-color: #000;
 }
 
 .app {
@@ -31,17 +39,19 @@ body {
   flex-flow: column;
   flex-direction: column;
   z-index: 1;
-  background-size: cover;
   font-family: "NHassGrotesk";
   transition: all ease 0.33ms;
+
 }
 
 .MuiDrawer-paperAnchorDockedLeft {
   border-right: 0 !important;
+  background: transparent;
+  padding-left: 30px;
 }
 
 .recharts-wrapper {
-  position:absolute;
+  position: absolute;
 }
 
 #choose-bond-view {
@@ -58,6 +68,7 @@ body {
       justify-content: center;
       flex-flow: row wrap;
       margin: 12px 0px;
+
       .marginedBtn {
         margin: 0.3rem;
       }
@@ -67,10 +78,12 @@ body {
 
 .ohm-card {
   max-width: 900px;
+
   .card-header {
     width: 100%;
     min-height: 33px;
     margin-bottom: 10px;
+
     h5 {
       font-weight: 600 !important;
     }
@@ -92,6 +105,7 @@ body {
     justify-content: center;
     flex-flow: row wrap;
     margin: 12px 0px;
+
     .marginedBtn {
       margin: 0.3rem;
     }
@@ -119,3 +133,33 @@ a:hover svg {
 .tooltip {
   z-index: 9999999;
 }
+
+// custom css
+.App-content {
+  background-image: url('./assets/earth.png');
+  background-repeat: no-repeat;
+  background-position: top 300px right 50px;
+}
+
+.hk-card {
+  background: transparent !important;
+  border: 1px solid #FFFFFF;
+}
+
+// .css-16yy3yt-MuiPaper-root.Paper-root {
+//   background: transparent;
+//   border: 1px solid #FFFFFF;
+// }
+
+// .css-hqh2ec-MuiPaper-root-MuiDrawer-paper {
+//   background: transparent;
+//   padding-left: 30px;
+// }
+
+// .css-1gdftw1.NavItem-root a.active .link-container {
+//   background: transparent;
+// }
+
+// .css-1gdftw1.NavItem-root a.active {
+//   color: #F8CC82;
+// }

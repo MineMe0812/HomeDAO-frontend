@@ -2,7 +2,6 @@ import { Box, Container, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { Metric, MetricCollection, Paper, TabBar } from "@olympusdao/component-library";
 import { memo, useEffect, useState } from "react";
 import { Outlet, Route, Routes, useSearchParams } from "react-router-dom";
-import PageTitle from "src/components/PageTitle";
 import { SafariFooter } from "src/components/SafariFooter";
 import { adjustDateByDays, getISO8601String } from "src/helpers/DateHelper";
 import { updateSearchParams } from "src/helpers/SearchParamsHelper";
@@ -138,7 +137,7 @@ const MetricsDashboard = () => {
     <>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Paper {...paperProps}>
+          <Paper {...paperProps} className="hk-card">
             <MetricCollection>
               <MarketCap {...sharedMetricProps} />
               <OHMPriceFromSubgraph {...sharedMetricProps} />
@@ -207,7 +206,7 @@ const MetricsDashboard = () => {
           {hideToggleSidePadding ? <></> : <Grid item xs={3} sm={4} />}
         </Grid>
         <Grid item xs={12}>
-          <Paper {...paperProps} style={paperStyles}>
+          <Paper {...paperProps} style={paperStyles} className="hk-card">
             <LiquidBackingPerOhmComparisonGraph
               activeToken={token}
               earliestDate={earliestDate}
@@ -216,27 +215,27 @@ const MetricsDashboard = () => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper {...paperProps} style={paperStyles}>
+          <Paper {...paperProps} style={paperStyles} className="hk-card">
             <TreasuryAssets earliestDate={earliestDate} subgraphDaysOffset={daysOffset} />
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper {...paperProps} style={paperStyles}>
+          <Paper {...paperProps} style={paperStyles} className="hk-card">
             <ProtocolOwnedLiquidityGraph earliestDate={earliestDate} subgraphDaysOffset={daysOffset} />
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper {...paperProps} style={paperStyles}>
+          <Paper {...paperProps} style={paperStyles} className="hk-card">
             <OhmSupply earliestDate={earliestDate} subgraphDaysOffset={daysOffset} />
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper {...paperProps} style={paperStyles}>
+          <Paper {...paperProps} style={paperStyles} className="hk-card">
             <DataWarning />
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper {...paperProps} style={paperStyles}>
+          <Paper {...paperProps} style={paperStyles} className="hk-card">
             <KnownIssues />
           </Paper>
         </Grid>
@@ -252,7 +251,7 @@ const PageWrapper = () => {
 
   return (
     <>
-      <PageTitle name="Dashboard" />
+      {/* <PageTitle name="Dashboard" /> */}
 
       <Container
         style={{
