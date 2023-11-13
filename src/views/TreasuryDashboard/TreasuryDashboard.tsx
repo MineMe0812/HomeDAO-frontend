@@ -14,10 +14,8 @@ import {
   PARAM_TOKEN_GOHM,
   PARAM_TOKEN_OHM,
 } from "src/views/TreasuryDashboard/components/Graph/Constants";
-import { LiquidBackingPerOhmComparisonGraph } from "src/views/TreasuryDashboard/components/Graph/LiquidBackingComparisonGraph";
 import { OhmSupply } from "src/views/TreasuryDashboard/components/Graph/OhmSupply";
 import { ProtocolOwnedLiquidityGraph } from "src/views/TreasuryDashboard/components/Graph/OwnedLiquidityGraph";
-import { TreasuryAssets } from "src/views/TreasuryDashboard/components/Graph/TreasuryAssets";
 import KnownIssues from "src/views/TreasuryDashboard/components/KnownIssues/KnownIssues";
 import {
   AbstractedMetricProps,
@@ -205,7 +203,7 @@ const MetricsDashboard = () => {
           </Grid>
           {hideToggleSidePadding ? <></> : <Grid item xs={3} sm={4} />}
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Paper {...paperProps} style={paperStyles} className="hk-card">
             <LiquidBackingPerOhmComparisonGraph
               activeToken={token}
@@ -213,12 +211,12 @@ const MetricsDashboard = () => {
               subgraphDaysOffset={daysOffset}
             />
           </Paper>
-        </Grid>
-        <Grid item xs={12}>
+        </Grid> */}
+        {/* <Grid item xs={12}>
           <Paper {...paperProps} style={paperStyles} className="hk-card">
             <TreasuryAssets earliestDate={earliestDate} subgraphDaysOffset={daysOffset} />
           </Paper>
-        </Grid>
+        </Grid> */}
         <Grid item xs={12}>
           <Paper {...paperProps} style={paperStyles} className="hk-card">
             <ProtocolOwnedLiquidityGraph earliestDate={earliestDate} subgraphDaysOffset={daysOffset} />
